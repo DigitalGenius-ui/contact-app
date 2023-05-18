@@ -34,3 +34,21 @@ export const getAllContacts = async () => {
     throw Error(error);
   }
 };
+
+// remove contact details
+export const removeContact = async (id) => {
+  try {
+    await axios.delete(`${baseURL}/api/contact/delete/${id}`);
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+// update contact
+export const updateContacts = async (data) => {
+  try {
+    await axios.put(`${baseURL}/api/contact/update/${data._id}`, data);
+  } catch (error) {
+    throw Error(error);
+  }
+};
